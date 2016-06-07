@@ -1,0 +1,118 @@
+var util = require("util");
+var nodemailer = require("nodemailer");
+var express = require('express');
+var router = express.Router();
+var ObjectID = require('mongodb').ObjectID;
+var Q = require("q");
+var mailConf = require('config.json')('./defaultData.json');
+var mailOp = mailConf.defaultMail;
+
+/*
+ *  SMS Router --------------------------------------------
+ */
+
+function insert(collectionTitle, elt, db) {
+    var deferred = Q.defer();
+    db.collection(collectionTitle).insert(elt, function (err, result) {
+        deferred.resolve(result);
+    });
+    return deferred.promise;
+}
+
+
+function validateEmail(email) {
+    var reg = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+    var deferred = Q.defer();
+    if (reg.test(email)) {
+        var validate = true;
+        deferred.resolve(validate);
+    } else {
+        var validate = false;
+        deferred.resolve(validate);
+    }
+    return deferred.promise;
+} 
+
+
+
+
+//Treating UserValue
+var sendingMail = function (mailOption) {
+    var deferred = Q.defer();
+    var smtpTransport = nodemailer.createTransport(mailOp);
+    smtpTransport.sendMail(mailOption, function (error, response) {
+         if (error) {
+            return deferred.resolve(error);
+        } else {
+            console.log(response);
+            return deferred.resolve(response);
+        }
+    });
+    return deferred.promise;
+}
+
+router.get('/sendTest', function (req, res) {
+    var db = req.db;
+    var mailOptions = {
+        from: 'bolzano.virtualhr@gmail.com', // sender address
+        to: 'allen09chezar@live.fr', // list of receivers
+        subject: 'Hello ', // Subject line
+        text: 'Hello world',
+        html: 'Hello world'// plaintext body
+    };
+    validateEmail(mailOptions.from).then(function (validate) {
+        if(validate){
+            return validateEmail(mailOptions.to);
+        }else{
+            res.send({msg: "eMail Sender error"});
+        }  
+    }).then(function (validate) {
+        if(validate){
+            return sendingMail(mailOptions);;
+        }else{
+            res.send({msg: "eMail Recipient error"});
+        }
+    }).then(function (response) {
+        console.log(response.message);
+        var d = new Date();
+        var currentTime = d.getTime();
+        mailOptions.Date = currentTime;
+        insert('mailcollection', mailOptions, db);
+    }).then(function () {
+        res.send({
+            msg: ''
+        });
+    });
+});
+
+
+router.post('/sendVerification', function (req, res) {
+    var db = req.db;
+    var mailOptions = req.body;
+    mailOptions.from = 'bolzano.virtualhr@gmail.com';
+    validateEmail(mailOptions.from).then(function (validate) {
+        if(validate){
+            return validateEmail(mailOptions.to);
+        }else{
+            res.send({msg: "eMail Sender error"});
+        }  
+    }).then(function (validate) {
+        if(validate){
+            return sendingMail(mailOptions);;
+        }else{
+            res.send({msg: "eMail Recipient error"});
+        }
+    }).then(function (response) {
+        console.log(response.message);
+        var d = new Date();
+        var currentTime = d.getTime();
+        mailOptions.Date = currentTime;
+        insert('mailcollection', mailOptions, db);
+    }).then(function () {
+        res.send({
+            msg: ''
+        });
+    });
+});
+
+module.exports = router;

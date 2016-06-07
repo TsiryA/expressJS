@@ -1,0 +1,36 @@
+
+#shadowing
+{
+	display: none;
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: #49484D;
+	z-index:1000;
+	opacity:0.95;
+	filter: alpha(opacity=50);
+}
+
+
+#box 
+{
+	display: none;
+	position: fixed;
+	z-index: 1000;
+    overflow: hidden;
+	background-color: rgba(0,0,0,0);
+	border: none;
+	height: 708px;
+}
+
+
+#boxtitle{
+	display: none;
+}
+
+#imageContener{
+	margin-left: 39%;
+	margin-top: -8%;
+}

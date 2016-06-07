@@ -1,0 +1,234 @@
+body {
+  padding: 30px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h2 {
+	margin:0 0 .5em 0;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#wrapper {
+	padding-left:312px;
+	position:relative;
+}
+
+#userList {
+	margin:0 0 30px 0;
+}
+	#userList table {
+		border-collapse:separate;
+		border-spacing:1px;
+		background:#CCC;
+	}
+		#userList table th {
+			background:#EEE;
+			font-weight:600;
+			padding:10px 20px;
+			text-align:center;
+		}
+		#userList table tbody {
+			padding:0; margin:0;
+			border-collapse:collapse;
+			border-spacing:0px;
+		}
+			#userList table td {
+				background:#FFF;
+				padding:5px 10px;
+				text-align:center;
+			}
+
+#userInfo {
+	width:250px;
+	position:absolute;
+	top:0; left:0;
+}
+	#userInfo p {
+		padding:15px;
+		border:1px solid #CCC;
+		background:rgba(80,120,255,0.05);
+	}
+
+#employeeList {
+	margin:0 0 30px 0;
+}
+	#employeeList table {
+		border-collapse:separate;
+		border-spacing:1px;
+		background:#CCC;
+	}
+		#employeeList table th {
+			background:#EEE;
+			font-weight:600;
+			padding:10px 20px;
+			text-align:center;
+		}
+		#employeeList table tbody {
+			padding:0; margin:0;
+			border-collapse:collapse;
+			border-spacing:0px;
+		}
+			#employeeList table td {
+				background:#FFF;
+				padding:5px 10px;
+				text-align:center;
+			}
+
+#employeeInfo {
+	width:250px;
+	position:absolute;
+	top:0; left:0;
+}
+	#employeeInfo p {
+		padding:15px;
+		border:1px solid #CCC;
+		background:rgba(80,120,255,0.05);
+	}
+
+
+#corpList {
+	margin:0 0 30px 0;
+}
+	#corpList table {
+		border-collapse:separate;
+		border-spacing:1px;
+		background:#CCC;
+	}
+		#corpList table th {
+			background:#EEE;
+			font-weight:600;
+			padding:10px 20px;
+			text-align:center;
+		}
+		#corpList table tbody {
+			padding:0; margin:0;
+			border-collapse:collapse;
+			border-spacing:0px;
+		}
+			#corpList table td {
+				background:#FFF;
+				padding:5px 10px;
+				text-align:center;
+			}
+
+#CorpInfo {
+	width:250px;
+	position:absolute;
+	top:150px; left:0;
+}
+	#CorpInfo p {
+		padding:15px;
+		border:1px solid #CCC;
+		background:rgba(80,120,255,0.05);
+	}
+
+
+#tempList {
+	margin:0 0 30px 0;
+}
+	#tempList table {
+		border-collapse:separate;
+		border-spacing:1px;
+		background:#CCC;
+	}
+		#tempList table th {
+			background:#EEE;
+			font-weight:600;
+			padding:10px 20px;
+			text-align:center;
+		}
+		#tempList table tbody {
+			padding:0; margin:0;
+			border-collapse:collapse;
+			border-spacing:0px;
+		}
+			#tempList table td {
+				background:#FFF;
+				padding:5px 10px;
+				text-align:center;
+			}
+
+#TempInfo {
+	width:250px;
+	position:absolute;
+	top:300px; left:0;
+}
+	#TempInfo p {
+		padding:15px;
+		border:1px solid #CCC;
+		background:rgba(80,120,255,0.05);
+	}
+
+fieldset {
+	border:0;
+	padding:0; margin:0;
+}
+
+
+
+#destArea[size="A4"] {
+  background: white;
+  z-index:1;
+  width: 21cm;
+  height: 29.7cm;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+
+#background{
+        position:absolute;
+        z-index:-1;
+        display:block;
+        min-height:100%; 
+        min-width:100%;
+        top:550px;
+        left:-200px;
+        color: azure;
+    }
+#bg-text
+    {
+        color:lightcyan;
+        font-size:120px;
+        transform:rotate(300deg);
+        -webkit-transform:rotate(300deg);
+        width: 100%;
+        height: 100%;
+        z-index:0;
+        opacity:0.3;
+    }
+
+@media print {
+    body, page[size="A4"] {
+        margin: 0mm
+        box-shadow: 0;
+        z-index:1;
+        position:absolute;
+      }
+    #background{
+        position:absolute;
+        z-index:-1;
+        display:block;
+        min-height:100%; 
+        min-width:100%;
+        top:550px;
+        left:-200px;
+    }
+#bg-text
+    {
+        color: lightcyan;
+        font-size:120px;
+        transform:rotate(300deg);
+        -webkit-transform:rotate(300deg);
+        width: 100%;
+        height: 100%;
+        z-index:0;
+        opacity:0.3;
+
+    }
+    
+}

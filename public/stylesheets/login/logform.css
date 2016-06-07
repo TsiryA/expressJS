@@ -1,0 +1,40 @@
+form#login {
+    width: 25%;
+    margin: 1em 1em;
+    padding: 3em 2em 2em 2em;
+    background: #fafafa;
+    border: 1px solid #ebebeb;
+    box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 1px 0px, rgba(0, 0, 0, 0.09804) 0px 1px 2px 0px;
+    float: left;
+}
+form#login div {
+    float: none;
+}
+.row div#first {
+    margin-top: -3%;
+}
+div.input-field input#password,
+div.input-field input#login {
+    width: 150%;
+}
+form#login div a {
+    float: right;
+    margin-top: 5%;
+    background-color: #4285F4;
+    margin-bottom: -10%;
+}
+div#requestAcces {
+    margin-top: -25%;
+    margin-bottom: 29%;
+}
+div#requestAcces a {
+    background-color: #4285F4;
+    width: 1%;
+}
+h2#access {
+    text-align: center;
+    font-size: 141%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    background-color: red;
+}

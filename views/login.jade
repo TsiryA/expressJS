@@ -1,0 +1,45 @@
+doctype html
+html
+    head
+        title LOGIN
+        link(href='/font/google/icon.css?family=Material+Icons' rel='stylesheet')
+        link(type='text/css' rel='stylesheet' href='/stylesheets/materialize.min.css'  media='screen,projection')
+        link(rel='stylesheet', href='/stylesheets/navBar.css')
+        link(rel='stylesheet', href='/stylesheets/login/logform.css')
+    body
+        block content
+            nav
+                div(class='nav-wrapper')
+                    form
+                        div#searchbar(class='input-field')
+                            input#search(type='search' required)
+                            label(for='search')
+                                i(class='material-icons') search
+                            i(class='material-icons') close
+                        ul#menu-nav(class='right hide-on-med-and-down')
+                            li
+                                a(href='../')
+                                    i(class='material-icons') language
+            div(class='row')
+                form#login(class='col s12')
+                    div(class='row')
+                        div#first(class='input-field col s6')
+                            i(class='material-icons prefix') account_circle
+                            input#login(type='text' class='validate')
+                            label(for='login') Login
+                        div#requestAcces
+                            a#sendCode(class='waves-effect waves-light btn')
+                                i(class='material-icons right') input
+                        div(class='input-field col s6')
+                            i(class='material-icons prefix') lock
+                            input#password(type='password' class='validate')
+                            label(for='password') Password
+                        a#confirmAccess(class='waves-effect waves-light btn') Login
+                            i(class='material-icons right') send
+        script(type='text/javascript' src='/javascripts/modules/jQuery/jquery.min.js')
+        script(type='text/javascript' src='/javascripts/modules/materialize/materialize.min.js')
+        script(type='text/javascript' src='/javascripts/modules/encryption/sha256.js')
+        script(type='text/javascript' src='/javascripts/login/login.js')
+            
+    
+

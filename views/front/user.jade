@@ -1,0 +1,301 @@
+doctype html
+html
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Profile Page
+    // CORE CSS
+    link(href='../../../javascripts/modules/materialize/materialize.min.css', type='text/css', rel='stylesheet', media='screen,projection')
+    link(href='../../../font/Materialicon.css?family=Material+Icons', type='text/css', rel='stylesheet', media='screen,projection')
+    link(href='../../../javascripts/modules/design/style.css', type='text/css', rel='stylesheet', media='screen,projection')
+    // INCLUDED PLUGIN CSS ON THIS PAGE
+    link(href='../../../javascripts/modules/design/prism.css', type='text/css', rel='stylesheet', media='screen,projection')
+    link(href='../../../javascripts/modules/design/css/perfect-scrollbar.css', type='text/css', rel='stylesheet', media='screen,projection')
+    link(href='../../../javascripts/modules/design/chartist.min.css', type='text/css', rel='stylesheet', media='screen,projection')
+    link(href='../../../javascripts/modules/lightBox/lightbox-form.css', type='text/css', rel='stylesheet', media='screen,projection')
+    link(href='../../../javascripts/modules/lightBox/lightbox-profil-edit.css', type='text/css', rel='stylesheet', media='screen,projection')
+    link(href='../../../javascripts/lightBox/lightbox-form.css', type='text/css', rel='stylesheet', media='screen,projection')
+    // Custome CSS
+    link(href='../../../javascripts/modules/design/custom-style.css', type='text/css', rel='stylesheet', media='screen,projection')
+    link(href='../../../javascripts/modules/sweet-alert-2/sweetalert2.css', type='text/css', rel='stylesheet', media='screen,projection')
+    link(href='../../../javascripts/modules/my-input/token-input.css', type='text/css', rel='stylesheet', media='screen,projection')
+    link(href='../../../javascripts/modules/my-input/token-input-facebook.css', type='text/css', rel='stylesheet', media='screen,projection')
+    link(href='../../../javascripts/modules/file/style.css', type='text/css', rel='stylesheet', media='screen,projection')
+    link(href='../../../stylesheets/front/table-style.css', type='text/css', rel='stylesheet', media='screen,projection')
+  body
+    #data
+        input#corpId(type='text', value='#{corp}', disabled='')
+        input#emp(type='text', value='#{code}', disabled='')
+        input#salt(type='text', value='#{salt}', disabled='')
+    // Start Page Loading
+    #loader-wrapper
+      #loader
+      .loader-section.section-left
+      .loader-section.section-right
+    // End Page Loading
+    // ////////////////////////////////////////////////////////////////////////////
+    // START MAIN
+    #main
+      // START WRAPPER
+      .wrapper
+        // ////////////////////////////////////////////////////////////////////////////
+        // START CONTENT
+        section#content
+          // start container
+          .container
+            #profile-page.section
+              // profile-page-header
+              #profile-page-header.card
+                #banner.card-image.waves-effect.waves-block.waves-light
+                  img.activator(src='../../../images/banner.jpg', alt='user background')
+                figure.card-profile-image
+                  img#banner.profile-pic.circle.z-depth-2.responsive-img.activator(src='../../../images/male.png', alt='profile image')
+                .card-content
+                  .row
+                    .col.s3.offset-s2
+                      h4#fullname1.card-title.grey-text.text-darken-4
+                      p#poste1.medium-small.grey-text
+                    .col.s3
+                      h4.card-title.grey-text.text-darken-4
+                        a#editProfil Edit profile
+                      p.medium-small.grey-text Changes informations
+                    .col.s3
+                      h4.card-title.grey-text.text-darken-4
+                        a#editSettings Settings
+                      p.medium-small.grey-text Privacy
+                    .col.s1
+                      h4.card-title.grey-text.text-darken-4
+                        a#logout Log out
+                .card-reveal
+                  p
+                    span.card-title.grey-text.text-darken-4
+                      i.mdi-navigation-close.right
+                        p#viewFullname
+                    span
+                      i#viewPosition.mdi-action-perm-identity.cyan-text.text-darken-2
+                  p
+                    i#viewMail.mdi-communication-email.cyan-text.text-darken-2
+                    |  
+                  p
+                    i#viewDateOfBirth.mdi-social-cake.cyan-text.text-darken-2
+                    |  
+              // / profile-page-header
+              // profile-page-content
+              #profile-page-content.row
+                // profile-page-sidebar
+                #profile-page-sidebar.col.s12.m4
+                  // task-card
+                  // Modal content
+                  ul#task-card.collection.with-header
+                    li.collection-header.cyan
+                      h4.mdi-communication-forum.task-card-title  Messages
+                      a.mdi-action-note-add
+                      p.task-card-date March 26, 2015
+                    li.collection-item.dismissable
+                      input#task2(type='checkbox')
+                      label(for='task2')
+                        | Check the new API standerds. 
+                        a.secondary-content(href='#')
+                          span.ultra-small Monday
+                      span.task-cat.purple Web API
+                    li.collection-item.dismissable
+                      input#task3(type='checkbox', checked='checked')
+                      label(for='task3')
+                        | Check the new Mockup of ABC. 
+                        a.secondary-content(href='#')
+                          span.ultra-small Wednesday
+                      span.task-cat.pink Mockup
+                    li.collection-item.dismissable
+                      input#task4(type='checkbox', checked='checked', disabled='disabled')
+                      label(for='task4') I did it !
+                      span.task-cat.cyan Mobile App
+                // profile-page-sidebar
+                // profile-page-wall
+                #profile-page-wall.col.s12.m8
+                  // profile-page-wall-share
+                  #profile-page-wall-share.row
+                    .col.s12
+                      ul.tabs.tab-profile.z-depth-1.light-blue
+                        li.tab.col.s3
+                          a.white-text.waves-effect.waves-light.active(href='#sendMessaheTab')
+                            i.mdi-editor-border-color
+                            |  Send Message
+                        li.tab.col.s3
+                          a.white-text.waves-effect.waves-light(href='#addFile')
+                            i.mdi-file-attachment
+                            |  Files
+                      // Sending message
+                      #sendMessaheTab.tab-content.col.s12.grey.lighten-4
+                        .row
+                          .col.s2
+                            img.profile-pic.circle.responsive-img.valign.profile-image-post(src='../../../images/male.png', alt='')
+                          .input-field.col.s10
+                            textarea#messageToAdmin.materialize-textarea(row='2')
+                            label(for='textarea') Something to send to the admin?
+                        .row
+                          .col.s12.m6.right-align
+                            a#sendMessage.waves-effect.waves-light.btn
+                              i.mdi-maps-rate-review.left
+                              | Send Message
+                      // AddPhotos
+                      #addFile.tab-content.col.s12.grey.lighten-4
+                        .row
+                          .col.s2
+                            img.profile-pic.circle.responsive-img.valign.profile-image-post(src='../../../images/male.png', alt='')
+                          form#employeeFile.col.s10(action='#')
+                            a.waves-effect.waves-light.btn( onclick="openbox( 1,'send-shadowing', 'send-box')")
+                              i.material-icons.left note_add
+                              | ADD
+                            #file-list-container
+                              .table-head
+                                table
+                                  thead
+                                    tr
+                                      th Title
+                                      th Description
+                                      th Date
+                                      th Show
+                              .table-body
+                                table
+                                  tbody
+            // end container
+        // END CONTENT
+      // END WRAPPER
+    // END MAIN
+    // START LIGHTBOX - EDIT PROFIL
+    #shadowing(onclick="closebox('shadowing', 'box')")
+    #box
+      span#boxtitle
+      .card-panel.grey.lighten-5.z-depth-1
+        #imageContener.col.s2
+          img#profilepic.circle.responsive-img(src='../../../images/female.png', alt='')
+          // notice the "circle" class
+        #contentProfil.col.s12
+          .col.s12
+            ul#BoxHeader-head.tabs
+              li.tab.col.s3
+                a(href='#BoxHeader-aboutUser') About
+              li.tab.col.s3
+                a.active(href='#BoxHeader-corpUser') Work
+              li.tab.col.s3
+                a(href='#BoxHeader-contactUser') Contact
+          #BoxHeader-aboutUser.col.s12
+            ul.collapsible(data-collapsible='accordion')
+              li
+                .collapsible-header.mdi-action-face-unlock
+                  | General Informations
+                .collapsible-body
+                  .row
+                    .input-field.col.s6
+                      input#first_name.validate.active(type='text')
+                      label(for='first_name') First Name
+                    .input-field.col.s6
+                      input#last_name.validate.active(type='text')
+                      label(for='last_name') Last Name
+                  .row
+                    .input-field.col.s6
+                      input#marital_status.validate.active(type='text')
+                      label(for='marital_status') Status
+                    .input-field.col.s6
+                      input#gender.validate.active(type='text')
+                      label(for='gender') Gender
+                  a#saveGeneralInfo.waves-effect.waves-light.btn.mdi-content-save  Save
+              li
+                .collapsible-header.mdi-action-picture-in-picture  Details
+                .collapsible-body
+                  .row
+                    .input-field.col.s6
+                      input#children.validate.active(type='text')
+                      label(for='children') Children
+                    .input-field.col.s6
+                      input#dateOfBirth.validate.active(type='text')
+                      label(for='dateOfBirth') Date of birth
+                  .row
+                    .input-field.col.s6
+                      input#placeOfBirth.validate.active(type='text')
+                      label(for='place of birth') Place of birth
+                    .input-field.col.s6
+                      input#nationality.validate.active(type='text')
+                      label(for='nationality') Nationality
+                  a#saveDetail.waves-effect.waves-light.btn.mdi-content-save  Save
+          #BoxHeader-corpUser.col.s12
+            .row
+              .input-field.col.s6
+                input#corp-poste.validate.active(type='text', disabled='')
+                label(for='corp-poste') Position
+            .row
+              .input-field.col.s6
+                input#corp-name.validate.active(type='text', disabled='')
+                label(for='corp-name') Corporation
+          #BoxHeader-contactUser.col.s12
+            .row
+              .input-field.col.s6
+                input#adress1.validate.active(type='text')
+                label(for='adress1') Home adress
+              .input-field.col.s6
+                input#adress2.validate.active(type='text')
+                label(for='adress2') Secondary adress
+            .row
+              .input-field.col.s6
+                input#user-cin.validate.active(type='text')
+                label(for='user-cin') CIN number
+              .input-field.col.s6
+                input#user-mail.validate.active(type='text')
+                label(for='user-mail') Mail
+            a#contact.waves-effect.waves-light.btn.mdi-content-save  Save
+    #send-shadowing(onclick="closebox('send-shadowing', 'send-box')")
+    #send-box
+      #file-sender-box.col.s6
+        .row
+          .input-field.col.s6
+            i.material-icons.prefix info
+            input#pack-title.validate(type='text')
+            label(for='pack-title') Title
+          .input-field.col.s6
+            i.material-icons.prefix comment
+            textarea#pack-comment.materialize-textarea
+            label(for='pack-comment') Comment
+        #filedrag
+          label(for='fileselect') Files to upload:
+          input#fileselect(type='file', name='fileselect[]', multiple='multiple')
+        #result-container
+          table.selector-container
+            tbody#messages
+        button#submit-send-Files.btn.waves-effect.waves-light(disabled='')
+          | Submit
+          i.material-icons.right send
+    
+    
+    
+    //
+      ================================================
+      Scripts
+      ================================================
+    // jQuery Library
+    script(type='text/javascript', src='../../../javascripts/modules/jQuery/jquery-2.1.4.js')
+    script(type='text/javascript', src='../../../javascripts/lightBox/lightbox-form.js')
+    // materialize js
+    script(type='text/javascript', src='../../../javascripts/modules/materialize/materialize.min.js')
+    // prism
+    script(type='text/javascript', src='../../../javascripts/modules/design/prism.js')
+    // scrollbar
+    script(type='text/javascript', src='../../../javascripts/modules/design/js/perfect-scrollbar.js')
+    // chartist
+    script(type='text/javascript', src='../../../javascripts/modules/design/chartist.js')
+    script(type='text/javascript', src='../../../javascripts/front/user-script.js')
+    script(type='text/javascript', src='../../../javascripts/modules/sweet-alert-2/sweetalert2.min.js')
+    script(type='text/javascript', src='../../../javascripts/modules/encryption/sha256.js')
+    script(type='text/javascript', src='../../../javascripts/front/loadInfo.js')
+    // sparkline
+    script(type='text/javascript', src='../../../javascripts/modules/design/jquery.sparkline.js')
+    script(type='text/javascript', src='../../../javascripts/modules/design/sparkline-script.js')
+    // plugins.js - Some Specific JS codes for Plugin Settings
+    script(type='text/javascript', src='../../../javascripts/modules/design/plugins.js')
+    // multiselect
+    script(type='text/javascript', src='../../../javascripts/modules/file/load-file.js')
+    script(type='text/javascript', src='../../../javascripts/modules/file/joint.js')
+    
+    script(type='text/javascript', src='../../../javascripts/modules/my-input/jquery.tokeninput.js')
+    script(type='text/javascript', src='../../../javascripts/modules/my-input/lodash.js')
+    script(type='text/javascript', src='../../../javascripts/modules/my-input/my-input.js')

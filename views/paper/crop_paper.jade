@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    // STYLESHEETS
+    // page style
+    link(rel='stylesheet', href='../../stylesheets/paper/base.css')
+    // the card style
+    link(rel='stylesheet', href='../../javascripts/modules/materialize/materialize.min.css')
+    link(rel='stylesheet', href='../../font/google/icon.css?family=Material+Icons')
+    
+    // Loading data for paper
+    // The lightbox style
+    link(type='text/css', rel='stylesheet', href='../../javascripts/modules/lightBox/lightbox-card.css')
+  body
+    input#latlng(value="#{corpLocation}" type="hidden")
+    canvas#myCanvas(width='700', height='600', resize='')
+    #shadowing(onclick="closebox()")
+    #box.card
+      .card-image.waves-effect.waves-block.waves-light
+        img#profile.activator(src='../../images/male.png')
+      .card-content
+        span#boxtitle.card-title.activator.grey-text.text-darken-4
+          | Name
+          i.material-icons.right more_vert
+      .card-reveal
+        span.card-title.grey-text.text-darken-4
+          | Details
+          i.material-icons.right close
+        p#name
+        p#mailcase
+    
+    // Element needed for using materialize
+    script(type='text/javascript', src='../../javascripts/modules/jQuery/jquery-2.1.4.js')
+    // Load the Paper.js library
+    script(type='text/javascript', src='../../javascripts/modules/paper/paper-full.js')
+    // Define inlined PaperScript associate it with myCanvas
+    script(type='text/paperscript', src='../../javascripts/modules/boxes-paper.js', canvas='myCanvas')
+    // Action of open and close box. It show or hide the details
+    script(type='text/javascript', src='../../javascripts/lightBox/box.js')
+    script(type='text/javascript', src='../../javascripts/modules/materialize/materialize.min.js')

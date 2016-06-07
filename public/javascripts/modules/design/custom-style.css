@@ -1,0 +1,79 @@
+/*================================================================================
+	Item Name: Materialize - Material Design Admin Template
+	Version: 2.1
+	Author: GeeksLabs
+	Author URL: http://www.themeforest.net/user/geekslabs
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN CSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+form#employeeFile {
+    margin-top: 6%;
+    margin-left: -2%;
+}
+.autorisation-send {
+    margin-top: -4%;
+    margin-left: -52%;
+}
+section#content{
+    margin-left: -21%;;
+}
+a:hover {
+ cursor:pointer;
+}
+
+
+div:hover {
+ cursor:pointer;
+}
+
+body {
+  -webkit-user-select: none;
+     -moz-user-select: -moz-none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#profile-page-header .card-content{
+    margin-top: -41px;
+    margin-bottom: -1%;
+}
+.card .card-image img{
+    height: 200px
+}
+
+#banner.card-image.waves-effect.waves-block.waves-light{
+    height: 200px;
+}
+
+#profile-page-wall{
+    margin-top: 0.6%;
+}
+
+
+#banner.circle.z-depth-2.responsive-img.activator{
+    margin-top: -50%;
+}
+
+.sweet-overlay{
+    background-color: #000 !important;
+}
+
+div#data{
+    display: none;
+}
+
+
+.row.autorisation-send .col.s12.m8.right-align a {
+    margin-left: 2% !important;
+}
+
+ul.instructions li{
+    list-style-type: decimal !important;
+    text-align: left !important;
+    margin-left: 20%;
+    margin-top: 4%;
+}

@@ -1,0 +1,320 @@
+body {
+    font-size: 16px;
+    line-height: 24px;
+    background: #051859;
+    color: rgb(255, 255, 255);
+    height: 100%;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
+    overflow: hidden;
+}
+
+div.container {
+    width: 62%;
+    margin: 50px 0 50px 50px;
+}
+
+p,
+li {
+    margin: 16px 0 16px 0;
+    width: 550px;
+}
+
+p.break {
+    margin-top: 35px;
+}
+
+ol {
+    padding-left: 24px;
+}
+
+ol li {
+    font-weight: bold;
+    margin-left: 0;
+}
+
+a,
+a:visited {
+    padding: 0 2px;
+    text-decoration: none;
+}
+
+a:active,
+a:hover {
+    color: #1811ec;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 40px;
+}
+
+b.header {
+    font-size: 18px;
+}
+
+span.alias {
+    font-size: 14px;
+    font-style: italic;
+    margin-left: 20px;
+}
+
+tr,
+td,
+th {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+th {
+    padding: 24px 0 0;
+}
+
+tr:first-child th {
+    padding-top: 0;
+}
+
+td {
+    padding: 6px 15px 6px 0;
+}
+
+td.definition {
+    line-height: 18px;
+    font-size: 14px;
+}
+
+.demo-hint {
+    font-size: 13px;
+    margin: 0 0 12px 12px;
+    font-weight: normal;
+}
+
+#VS {
+    width: 100%;
+}
+
+#VS code,
+#VS pre,
+#VS tt {
+    font-family: Monaco, Consolas, "Lucida Console", monospace;
+    font-size: 12px;
+    line-height: 18px;
+    color: #444;
+    background: none;
+}
+
+#VS code {
+    margin-left: 8px;
+    padding: 0 0 0 12px;
+    font-weight: normal;
+}
+
+#VS pre {
+    font-size: 12px;
+    padding: 2px 0 2px 0;
+    border-left: 6px solid #829C37;
+    margin: 12px 0;
+}
+
+#search_query {
+    margin: 18px 0;
+    opacity: 0;
+}
+
+#search_query .raquo {
+    font-size: 18px;
+    line-height: 12px;
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+#search_query2 {
+    margin: 18px 0;
+    opacity: 0;
+}
+
+#search_query2 .raquo {
+    font-size: 18px;
+    line-height: 12px;
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+em {
+    font-style: italic;
+}
+
+table {
+    background: #f5f5f5;
+    border-collapse: separate;
+    box-shadow: inset 0 1px 0 #fff;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: left;
+    table-layout: fixed;
+    width: 100%;
+    white-space: nowrap;
+    color: rgb(0,0,0);
+}
+
+th {
+    background: url(http://jackrugile.com/images/misc/noise-diagonal.png), linear-gradient(#777, #444);
+    border-left: 1px solid #555;
+    border-right: 1px solid #777;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #333;
+    box-shadow: inset 0 1px 0 #999;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 15px;
+    position: relative;
+    text-shadow: 0 1px 0 #000;
+}
+
+th:after {
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, .08));
+    content: '';
+    display: block;
+    height: 25%;
+    left: 0;
+    margin: 1px 0 0 0;
+    position: absolute;
+    top: 25%;
+    width: 100%;
+}
+
+th:first-child {
+    border-left: 1px solid #777;
+    box-shadow: inset 1px 1px 0 #999;
+}
+
+th:last-child {
+    box-shadow: inset -1px 1px 0 #999;
+}
+
+td {
+    border-right: 1px solid #fff;
+    border-left: 1px solid #e8e8e8;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 10px 15px;
+    position: relative;
+    transition: all 300ms;
+}
+
+td:first-child {
+    box-shadow: inset 1px 0 0 #fff;
+}
+
+td:last-child {
+    border-right: 1px solid #e8e8e8;
+    box-shadow: inset -1px 0 0 #fff;
+}
+
+tr {
+    background: url(http://jackrugile.com/images/misc/noise-diagonal.png);
+}
+
+tr:nth-child(odd) td {
+    background: #f1f1f1 url(http://jackrugile.com/images/misc/noise-diagonal.png);
+}
+
+tr:last-of-type td {
+    box-shadow: inset 0 -1px 0 #fff;
+}
+
+tr:last-of-type td:first-child {
+    box-shadow: inset 1px -1px 0 #fff;
+}
+
+tr:last-of-type td:last-child {
+    box-shadow: inset -1px -1px 0 #fff;
+}
+
+tbody:hover td {
+    color: transparent;
+    text-shadow: 0 0 3px #aaa;
+}
+
+tbody:hover tr:hover td {
+    color: #444;
+    text-shadow: 0 1px 0 #fff;
+}
+
+
+/* Material custom style */
+
+.demo-card-event.mdl-card {
+    width: 256px;
+    height: 256px;
+    background: url('http://www.hdwallpapers.in/download/genuine_abstract-2560x1600.jpg') center / cover;
+    text-shadow: 1px 1px 2px #616161;
+}
+
+.demo-card-event > .mdl-card__actions {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.demo-card-event > .mdl-card__title {
+    align-items: flex-start;
+}
+
+.demo-card-event > .mdl-card__title > h4 {
+    margin-top: 0;
+}
+
+.demo-card-event > .mdl-card__actions {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.demo-card-event > .mdl-card__title,
+.demo-card-event > .mdl-card__actions,
+.demo-card-event > .mdl-card__actions > .mdl-button {
+    color: #fff;
+}
+
+.table-body {
+    position: relative;
+    overflow-y: auto;
+    height: 200px;
+}
+
+#search_result_container{
+    width: 60%;
+    float: left;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+
+#profile_Pic{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+}
+#profile_Pic img{
+    width: 100%;
+    height: 100%;
+}
+
+#progressBar{
+    margin-left: 33%;
+}
+
+#search_box_container{
+    float: left;
+    width: 75%;
+    margin-left: 5%;
+}
+
+.mdl-menu__container.is-upgraded.is-visible, .mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect.mdl-js-ripple-effect--ignore-events{
+    width: 150px !important;
+    margin-top: 1% !important;
+}

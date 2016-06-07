@@ -1,0 +1,73 @@
+doctype html
+html
+  head
+    meta(http-equiv='content-type', content='text/html;charset=UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='chrome=1')
+    title [CORP TREE] - EMPLOYEE SEARCH
+    link(rel='stylesheet', href='javascripts/modules/lib/css/reset.css', type='text/css', media='screen', charset='utf-8')
+    link(rel='stylesheet', href='javascripts/modules/lib/css/icons.css', type='text/css', media='screen', charset='utf-8')
+    link(rel='stylesheet', href='javascripts/modules/lib/css/workspace.css', type='text/css', media='screen', charset='utf-8')
+    link(rel='stylesheet', href='stylesheets/index-search/style.css', type='text/css', media='screen', charset='utf-8')
+    link(rel='stylesheet', href='javascripts/modules/perfect-scrollbar/css/perfect-scrollbar.css', type='text/css', media='screen', charset='utf-8')
+    link(rel='stylesheet', href='javascripts/modules/mdl/material.css', type='text/css', media='screen', charset='utf-8')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    script(src='javascripts/modules/jQuery/jquery-2.1.4.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/vendor/jquery.ui.core.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/vendor/jquery.ui.widget.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/vendor/jquery.ui.position.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/vendor/jquery.ui.menu.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/vendor/jquery.ui.autocomplete.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/vendor/underscore-1.5.2.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/vendor/backbone-1.1.0.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/lib/js/visualsearch.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/lib/js/views/search_box.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/lib/js/views/search_facet.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/lib/js/views/search_input.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/lib/js/models/search_facets.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/lib/js/models/search_query.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/lib/js/utils/backbone_extensions.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/lib/js/utils/hotkeys.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/lib/js/utils/jquery_extensions.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/lib/js/utils/search_parser.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/lib/js/utils/inflector.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/lib/js/templates/templates.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/mdl/material.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/perfect-scrollbar/js/perfect-scrollbar.js', type='text/javascript', charset='utf-8')
+    script(src='javascripts/modules/perfect-scrollbar/js/perfect-scrollbar.jquery.js', type='text/javascript', charset='utf-8')
+  body
+    #VS.container
+      #search_box_container
+      #options-container
+          button#drop-menu.mdl-button.mdl-js-button.mdl-button--icon.mdl-button--colored.mdl-js-ripple-effect
+            i.material-icons info
+          ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for='drop-menu')
+            li#home.mdl-menu__item Home
+            li#login.mdl-menu__item Login
+            li#register.mdl-menu__item Register
+      #search_query  
+      script(src='javascripts/index-search/tsiry-search-bar.js', type='text/javascript', charset='utf-8')
+    #search_result_container(style="display: none;")
+      .table-head
+        table
+          thead
+            tr
+              th Fullname
+              th position
+              th corporation
+              th Mail
+      #table-body.table-body
+        table
+          tbody
+    
+    #progressBar.mdl-progress.mdl-js-progress.mdl-progress__indeterminate(style="display: none;")
+    #selected-result_container(style="display: none;")
+      .demo-card-event.mdl-card.mdl-shadow--2dp
+        .mdl-card__title.mdl-card--expand
+          h4#identification
+        .mdl-card__actions.mdl-card--border
+          #profile_Pic
+            img( id="profileImagePlace")
+          a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect
+            | Access Profile
+          .mdl-layout-spacer
+          i.material-icons face

@@ -1,0 +1,4 @@
+div#newEmployeeError, div#repError {
+    border-radius: 10px;
+    background: red;
+}

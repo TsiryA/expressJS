@@ -1,0 +1,41 @@
+.photobooth ul li{
+    list-style-type: none;
+    padding: 0px;
+    margin-left: -30px;
+}
+
+.photobooth ul{
+    width: 9px !important;
+}
+
+.img_border {
+        border: 2px solid red;
+}
+
+.thumbnail img{
+    width: 100px;
+}
+
+
+#contener{
+    overflow-x: hidden !important;
+    height: 320;
+    width: 200;
+    margin-left: 1%;
+}
+
+#camera{
+    float: left;
+}
+
+ul.thumbnails.image_picker_selector{
+    margin-left: 22% !important;
+}
+
+
+a.mdi-action-note-add{
+    color: white ;
+    margin-left: 42% ;
+    font-size: 225%;
+}
+

@@ -1,0 +1,8 @@
+{
+    "jscodehints.detectedExclusions": [
+        "D:/JSGestion/GP/public/javascripts/addEmployee.js",
+        "D:/JSGestion/GP/routes/docs.js",
+        "D:/JSGestion/GP/routes/email.js",
+        "E:/[BOLZANO]/public/javascripts/[OLD]/org_base/canvas.js"
+    ]
+}

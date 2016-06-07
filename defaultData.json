@@ -1,0 +1,18 @@
+{
+    "defaultMail": {
+        "service": "gmail",
+        "auth": {
+            "user": "aiza.bolzano@gmail.com",
+            "pass": "rararaR1"
+        }
+    },
+    "dataBase":{
+        "dbtype": "mongodb",
+        "dbuser": "bolzano1",
+        "dbpass": "tsiry01",
+        "dbhost": "ds053894.mongolab.com",
+        "dbport": "53894",
+        "dbname": "gestionp",
+        "pureurl" : ""
+    }
+}

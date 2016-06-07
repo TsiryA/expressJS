@@ -1,0 +1,32 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/home/base.css')
+    body
+        block content
+            div#map(class='header')
+              h1 Corporations Trees
+              h3 Locations
+
+            div(class='floating-item-container')
+              div(class='button-container')
+                a(href='#' class='btn btn-float')
+                  i(class='mdi-content-add')
+              div(class='modal')
+                a(href='#' class='close')
+                    i(class='mdi-navigation-close')
+                div(class='modal-content')
+                    div#acces-to-login
+                        h2 Corporation locations the easy way
+                        h6 *Account creation is free.
+                        a(href='/login') Login 
+                        | 
+                        a(href='/register') Register
+                            
+                    
+                    
+        script(type='text/javascript' src='/javascripts/modules/jQuery/jquery.min.js')
+        script(type='text/javascript' src='https://maps.googleapis.com/maps/api/js')
+        script(type='text/javascript' src='/javascripts/home/base.js')
+        

@@ -1,0 +1,24 @@
+div.login {
+    width: 25%;
+}
+div.btns {
+    margin-top: 0%;
+    margin-left: 2%;
+}
+div.btns a {
+    margin-left: 1%;
+}
+div#resume-table {
+    width: 60%;
+    margin: 1em 1em;
+    padding: 3em 2em 2em;
+    background: #FAFAFA none repeat scroll 0% 0%;
+    border: 1px solid #EBEBEB;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.098);
+    float: left;
+}
+h5#table-title {
+    margin-top: 1.5%;
+    margin-bottom: 1%;
+    text-align: center;
+}

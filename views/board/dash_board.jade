@@ -1,0 +1,337 @@
+doctype html
+html
+  head
+    title welcome #{username}
+    meta(name='viewport', content='initial-scale=1.0, user-scalable=no')
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='../../../../stylesheets/materialize.min.css')
+    link(href='../../../../font/Materialicon.css?family=Material+Icons', rel='stylesheet')
+    link(rel='stylesheet', href='../../../../stylesheets/dash/design.css')
+    link(rel='stylesheet', href='../../../../stylesheets/dash/box.css')
+    link(rel='stylesheet', href='../../../../javascripts/modules/sweet-alert-2/sweetalert2.css')
+    link(rel='stylesheet', href='../../../../javascripts/modules/sweet-alert-2/personnal.css')
+  body
+    // LOGIN LOGOUT
+    #logon.row.valign-wrapper
+      .col.s2
+        img.circle.responsive-img(src='../../../../images/avatar.png', alt='')
+        // notice the "circle" class
+      .col.s10
+        span.black-text
+          | Hi, #{username}
+          br
+          | from #{corp}
+          a#conf-btn.dropdown-button.btn(href='#' data-activates='drop-Conf')
+            i.material-icons.left power_settings_new
+          ul#drop-Conf.dropdown-content
+            li
+              a#logout logout
+            li.divider
+            li
+              a#desactivateAccount Close
+    // BACK OFFICE
+    .row
+      #header.col.s10
+        ul.tabs
+          li.tab.col.s3
+            a.active(href='#basicinfoTab') Basics Info
+          li.tab.col.s3
+            a(href='#employeeTab') Employee
+          li.tab.col.s3
+            a(href='#logTab') LOGS
+      #basicinfoTab.col.s10
+        #databasic
+          ul.collapsible.popout(data-collapsible='accordion')
+            li
+              .collapsible-header
+                i.material-icons
+                  | perm_identity
+                |  User info
+              .collapsible-body
+                // BASIC INFORMATIONS
+                form.col.s10
+                  .row
+                    .input-field.col.s6
+                      input#username.validate(type='text' value='#{username}')
+                      label(for='username') Username
+                    .input-field.col.s6
+                      input#useremail.validate(type='email' placeholder='')
+                      label(for='mail') Mail
+                      // Checking eMail validity
+                      a#checkmail.waves-effect.waves-light.btn
+                        i.material-icons.right
+                          | email
+                        |  Check mail
+                // SAVE ALL CHANGE
+                a#saveBasics.waves-effect.waves-light.btn
+                  i.material-icons.right
+                    | send
+                  |  Save change
+            li
+              .collapsible-header
+                i.material-icons place
+                | Corp Detail
+              .collapsible-body
+                // MAP CORP INFO
+                .row
+                  .input-field.col.s6
+                    input#name.validate(value='#{corp}', type='text')
+                    label(for='name') Name
+                  .input-field.col.s6
+                    input#adress.validate(disabled='', value='#{adress}', type='text')
+                    label(for='adress') Adress
+                .row
+                  .input-field.col.s10
+                    input#position.validate(value='#{location}', type='hidden')
+                .row
+                  .input-field.col.s10
+                    input#userid.validate(value='#{userval}', type='hidden')
+                .row
+                  .input-field.col.s10
+                    textarea#description.materialize-textarea #{description}
+                    label(for='description') Description
+                    
+                // SAVE ALL CHANGE
+                a#saveCorpInfo.waves-effect.waves-light.btn
+                  i.material-icons.right
+                    | send
+                  |  Save change
+        // GOOGLE MAP API
+        #map SET A MAP HERE
+      #employeeTab.col.s10
+        ul.collapsible.popout(data-collapsible='accordion')
+          li
+            .collapsible-header
+              i.material-icons
+                | perm_identity
+              |  Representants
+            .collapsible-body
+              // REP START
+              // List
+              #cardcontainer.row
+                #tablecontainer.col.s10.m6
+                  .card.blue-grey.darken-1
+                    .card-content.white-text
+                      span.card-title REPRESENTANT LIST
+                      // TABLE for all representant
+                      #headtable
+                        table
+                          thead
+                            tr
+                              th(data-field='name') Name
+                              th(data-field='email') eMail
+                              th(data-field='delete') Actions
+                      #renderlisttable
+                        table#repList.highlight
+                          tbody
+                            
+                    // TABLE actions
+                    .card-action
+                      a#dropemployeetable(href='#') Drop all
+                      a#addnewrepresentative(href='#') Add new
+              // DETAIL
+              #detailcard.card
+                .card-image.waves-effect.waves-block.waves-light
+                  img.activator(height='180px', src='../../../../images/avatar.png')
+                .card-content
+                  span.card-title.activator.grey-text.text-darken-4
+                    | REPRESENTANT
+                    i.material-icons.right more_vert
+                  p
+                    a See details
+                .card-reveal
+                  span.card-title.grey-text.text-darken-4
+                    | REPRESENTANT
+                    i.material-icons.right close
+                  // SEE DEATILS
+                  p 
+                    strong Fullname: 
+                    span#repFullname
+                    br
+                    strong Email: 
+                    span#repMail
+                    br
+                    strong Position: 
+                    span#repPosition
+                  // ACCESS TO DETAILS AND MODIFY
+                  a#getProfileLink.waves-effect.waves-light.btn
+                    i.material-icons.right
+                      | send
+                    |  Get Profile link
+                  a#changePosition.waves-effect.waves-light.btn
+                    i.material-icons.right
+                      | send
+                    |  Change position
+              // REP END
+          li
+            .collapsible-header
+              i.material-icons
+                | perm_identity
+              |  Employee
+            .collapsible-body
+              // EMPLOYEE START
+              // List
+              #cardcontainer.row
+                #tablecontainer.col.s10.m6
+                  .card.blue-grey.darken-1
+                    .card-content.white-text
+                      span.card-title EMPLOYEE LIST
+                      // TABLE for all representant
+                      #headtable
+                        table
+                          thead
+                            tr
+                              th(data-field='name') Name
+                              th(data-field='email') eMail
+                              th(data-field='delete') Actions
+                      #renderlisttable
+                        table#employeeList.highlight
+                          tbody
+                    // TABLE actions
+                    .card-action
+                      a#dropemployeetable(href='#') Drop all
+                      a#addnewemployee(href='#') Add new
+              // DETAIL
+              #detailcard.card
+                .card-image.waves-effect.waves-block.waves-light
+                  img#employeeAvatar.activator(height='180px', src='../../../../images/avatar.png')
+                .card-content
+                  span.card-title.activator.grey-text.text-darken-4
+                    | EMPLOYEE
+                    i.material-icons.right more_vert
+                  p
+                    a See details
+                .card-reveal
+                  span.card-title.grey-text.text-darken-4
+                    | EMPLOYEE
+                    | Details
+                    i.material-icons.right close
+                  // SEE DEATILS
+                  p 
+                    strong Name: 
+                    span#employeeName
+                    br
+                    strong Firstname: 
+                    span#employeeFirstname
+                    br
+                    strong Status: 
+                    span#employeeStatus
+                    br
+                    strong Adress 1:  
+                    span#employeeAdress1
+                    br
+                    strong eMail: 
+                    span#employeeMail
+                  // ACCESS TO DETAILS AND MODIFY
+                  a#getProfileLink.waves-effect.waves-light.btn
+                    i.material-icons.right
+                      | send
+                    |  Get Profile link
+                  a#changePosition.waves-effect.waves-light.btn
+                    i.material-icons.right
+                      | send
+                    |  Change position
+              // EMPLOYEE END
+      #logTab.col.s10
+        ul.collapsible.popout(data-collapsible='accordion')
+          li
+            .collapsible-header
+              i.material-icons
+                | schedule
+              |  Access
+            .collapsible-body
+              // ACCESS START
+              // List
+              #cardcontainer.row
+                #tablecontainer.col.s10.m6
+                  .card.blue-grey.darken-1
+                    .card-content.white-text
+                      span.card-title ACCESS LOG
+                      // TABLE for all access
+                      #headtable
+                        table
+                          thead
+                            tr
+                              th(data-field='name') Name
+                              th(data-field='email') date
+                              th(data-field='delete') delete
+                      #renderlisttable
+                        table#logList.highlight
+                          tbody
+                    // TABLE actions
+                    .card-action
+                      a#clearinternalAccess(href='#') CLEAR ALL
+              // DETAIL
+              #detailcard.card
+                .card-image.waves-effect.waves-block.waves-light
+                  img.activator(height='180px', src='../../../../images/avatar.png')
+                .card-content
+                  span.card-title.activator.grey-text.text-darken-4
+                    | [FULL NAME]
+                    i.material-icons.right more_vert
+                  p
+                    a See details
+                .card-reveal
+                  span.card-title.grey-text.text-darken-4
+                    | [FULL NAME]
+                    i.material-icons.right close
+                  // SEE DEATILS
+                  p Name: [NAME]
+                  p Firstname: [FIRSTNAME]
+                  p email: [EMAIL]
+                  p date: [DATE]
+              // REP END
+          li
+            .collapsible-header
+              i.material-icons
+                | assignment_ind
+              |  External access
+            .collapsible-body
+              // EXTERNAL ACCESS START
+              // List
+              #cardcontainer.row
+                #tablecontainer.col.s10.m6
+                  .card.blue-grey.darken-1
+                    .card-content.white-text
+                      span.card-title ACCESS LIST
+                      // TABLE for all representant
+                      #headtable
+                        table
+                          thead
+                            tr
+                              th(data-field='name') Name
+                              th(data-field='email') eMail
+                              th(data-field='delete') Delete
+                      #renderlisttable
+                        table#extList.highlight
+                          tbody
+                    // TABLE actions
+                    .card-action
+                      a#clearexternalAccess(href='#') Clear all
+              // DETAIL
+              #detailcard.card
+                .card-image.waves-effect.waves-block.waves-light
+                  img.activator(height='180px', src='../../../../images/avatar.png')
+                .card-content
+                  span.card-title.activator.grey-text.text-darken-4
+                    | EMPLOYEE [FULL NAME]
+                    i.material-icons.right more_vert
+                  p
+                    a See details
+                .card-reveal
+                  span.card-title.grey-text.text-darken-4
+                    | EMPLOYEE [FULL NAME] Details
+                    i.material-icons.right close
+                  // SEE DEATILS
+                  p Name: [NAME]
+                  p Firstname: [FIRSTNAME]
+                  p date: [DATE]
+                  p type: [TYPE]
+              // EMPLOYEE END
+    script(src='../../../../javascripts/modules/jQuery/jquery-2.1.4.min.js')
+    script(src='../../../../javascripts/dash/localisation.js')
+    script(src='../../../../javascripts/dash/loadInfo.js')
+    script(src='../../../../javascripts/dash/save-modifications.js')
+    script(src='../../../../javascripts/modules/sweet-alert-2/sweetalert2.min.js')
+    script(src='../../../../javascripts/dash/alertBox.js')
+    script(src='../../../../javascripts/modules/materialize/materialize.min.js')

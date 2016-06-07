@@ -1,0 +1,59 @@
+div#databasic {
+    float: left;
+    width: 46%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+a#saveCorpInfo,
+a#saveBasics {
+    margin-left: 1%;
+    margin-bottom: 1%;
+}
+div#tablecontainer {
+    width: 100%;
+}
+div#cardcontainer {
+    width: 46%;
+    margin-left: 1%;
+    float: left;
+    margin-right: 3%;
+}
+div#headtable {
+    overflow: hidden;
+}
+div#renderlisttable {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 80px;
+}
+.collapsible-body p {
+    padding: 0.6rem;
+}
+div#logon {
+    margin-top: 1%;
+    box-shadow: 0px 5px 11px 0px rgba(0, 0, 0, 0.18), 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+    float: right;
+    width: 30%;
+    margin-bottom: 1%;
+    position: relative;
+    right: 1%;
+}
+div#detailcard {
+    width: 30%;
+    margin-left: 60%;
+}
+
+a#changePosition{
+    width: 77%;
+    margin-top: 1%;
+}
+
+a#conf-btn{
+    margin-bottom: 1%;
+    position: relative;
+    left: 47%;
+}
+
+#header.col.s10, #basicinfoTab.col.s10, #employeeTab.col.s10, #logTab.col.s10{
+    margin-left: 8%;
+}

@@ -1,0 +1,124 @@
+doctype html
+html
+  head
+    title FIRST ACCESS
+    meta(name='viewport', content='initial-scale=1.0, user-scalable=no')
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='../../../../stylesheets/materialize.min.css')
+    link(rel='stylesheet', href='../../../../stylesheets/newDash/mapstyle.css')
+    link(rel='stylesheet', href='../../../../stylesheets/newDash/design.css')
+    link(rel='stylesheet', href='../../../../javascripts/modules/image-picker/image-picker.css')
+    link(rel='stylesheet', href='../../../../javascripts/modules/sweet-alert-2/sweetalert2.css')
+    link(rel='stylesheet', href='../../../../javascripts/modules/lightBox/lightbox-form.css')
+    link(href='../../../../font/Materialicon.css?family=Material+Icons', rel='stylesheet')
+  body
+    #type-selector.controls
+      input#pac-input.controls(type='text', placeholder='Enter a location')
+      input#changetype-all(type='radio', name='type', checked='checked')
+      label(for='changetype-all') All
+      input#changetype-establishment(type='radio', name='type')
+      label(for='changetype-establishment') Establishments
+      input#changetype-address(type='radio', name='type')
+      label(for='changetype-address') Addresses
+      input#changetype-geocode(type='radio', name='type')
+      label(for='changetype-geocode') Geocodes
+    #map
+    #formContainer.row
+      ul.collapsible(data-collapsible='accordion')
+        li
+          .collapsible-header
+            i.material-icons place
+            | Basic Informations
+          .collapsible-body
+            .row
+              .input-field.col.s6
+                input#name.validate.active(placeholder='Name of the corp', type='text')
+                label(for='name') Name
+              .input-field.col.s6
+                input#adress.validate.active(placeholder='Adress of the corp', type='text')
+                label(for='adress') Adress
+            .row
+              .input-field.col.s12
+                input#position.validate( value='', type='hidden')
+            .row
+              .input-field.col.s12
+                input#userid.validate(value='#{userval}', type='hidden')
+                input#username.validate(value='#{username}', type='hidden')
+            .row
+              .input-field.col.s12
+                textarea#description.materialize-textarea
+                label(for='description') Description
+            .card-panel.teal
+              span.white-text
+                | Please fill this form first.
+                | I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+            a#saveinfo.waves-effect.waves-light.btn
+              i.material-icons.right send
+              | save
+        li
+          .collapsible-header
+            i.material-icons filter_drama
+            | Image files
+          .collapsible-body
+            form#fileUpload(method='post', action='/uploads/upload', enctype='multipart/form-data')
+              .row
+                .input-field.col.s12
+                  input#useridFile.validate( value='#{userval}', type='hidden' name='userid')
+              a#sendImage.waves-effect.waves-light.btn(onclick="openbox('Uploading images', 0)")
+                i.material-icons.right picture_in_picture
+                | Send image
+            .card-panel.teal
+              span.white-text
+                | Please save Corporations informations before uploading files.
+                | You can import images from here to customise Slider.
+        li
+          .collapsible-header
+            i.material-icons library_books
+            | Importing data
+          .collapsible-body
+            #importingBase.file-field.input-field
+              .btn
+                span File
+                input#xlf(type='file')
+              .file-path-wrapper
+                input.file-path.validate(type='text')
+            .card-panel.teal
+              span.white-text
+                | Please save Corporations informations before uploading files.
+                | Select the '*.xls' file containing your dataBase or download a template&nbsp;
+                a(href='/external/templateFile') here
+                |  and fill it with your own data.
+      a#confirm.waves-effect.waves-light.btn
+        i.material-icons.right send
+        | Complete
+    #shadowing(onclick="closebox()")
+    #box
+      span#boxtitle
+      .file-field.input-field
+        .btn
+          span Add
+          input#pic-source(type='file', accept='image/*', onchange='loadFile(event)')
+        .file-path-wrapper
+          input.file-path.validate(type='text')
+      #contener
+        select#gallery.image-picker.show-html(multiple='multiple')
+      button#deletebtn.btn.waves-effect.waves-light(type='button', onclick='deleteSelection()', style='display: none;')
+        | Delete Selection
+        i.material-icons.right delete
+      button#bannerConfirm.btn.waves-effect.waves-light(type='button', disabled='')
+        | Send Files
+        i.material-icons.right send
+        
+    script(src='../../../../javascripts/newDash/localisation.js')
+    script(src='../../../../javascripts/modules/jQuery/jquery-2.1.4.min.js')
+    script(src='../../../../javascripts/modules/materialize/materialize.min.js')
+    script(src='../../../../javascripts/modules/sweet-alert-2/sweetalert2.min.js')
+    script(src='../../../../javascripts/modules/lightBox/lightbox-form.js')
+    script(src='../../../../javascripts/modules/shim.js')
+    script(src='../../../../javascripts/modules/xls.js')
+    script(src='/javascripts/modules/importingData.js')
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDiOQpE_Q7KDvk5mVXPU_0EWsmEmT4CHM4 &signed_in=true&libraries=places&callback=initMap', async='', defer='')
+    script(src='../../../../javascripts/newDash/saveInfo.js')
+    script(src='../../../../javascripts/modules/image-picker/image-picker.js')
+    script(src='../../../../javascripts/modules/image/img-to-base64.js')
+    script(src='../../../../javascripts/modules/image/banner.js')

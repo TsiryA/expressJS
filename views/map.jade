@@ -1,0 +1,48 @@
+doctype html
+html(xmlns='http://www.w3.org/1999/xhtml')
+  head
+    title [CORP TREE]
+    link(rel='stylesheet', href='stylesheets/jquery-ui.css')
+    link(href='/font/google/icon.css?family=Material+Icons', rel='stylesheet')
+    link(type='text/css', rel='stylesheet', href='/stylesheets/materialize.min.css', media='screen,projection')
+    style(type='text/css').
+      body{overflow: hidden;}
+      .ui-helper-hidden-accessible { position: absolute;  left: -9999px;}
+      #map { height: 550px; width: 100%; margin-top: 0%;}
+      div.card{box-shadow: none;}
+      .nav-wrapper{background-color: rgb(66,133,244);}
+      .ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content{border: none;}
+      .ui-menu-item.ui-state-focus{border: none; background-color: rgb(245,245,245);}
+      #nav-mobile{margin-top: -6%}
+      form{width: 90%}
+  body
+    nav
+      .nav-wrapper
+        form
+          .input-field
+            i.material-icons.prefix search
+            input#myText(type='search', required='')
+            label(for='search') Search
+            i#resetSearch.material-icons close
+        ul#nav-mobile.right.hide-on-med-and-down
+          li
+            a#confirmAccess
+                i.material-icons done
+    .fixed-action-btn(style='bottom: 45px; right: 24px;')
+        a.btn-floating.btn-large.blue.tooltipped(data-position="left" data-delay="50" data-tooltip="Tools")
+            i.large.material-icons info_outline
+          ul
+            li
+              a.btn-floating.blue.darken-1.tooltipped(data-position="left" data-delay="50" href='../../login') 
+                i.material-icons person_pin
+            li
+              a.btn-floating.blue.tooltipped(data-position="left" data-delay="50" href='../../register')
+                i.material-icons perm_identity
+    div#map
+    script(src='javascripts/modules/jQuery/jquery-2.1.4.min.js')
+    script(type='text/javascript', src='/javascripts/modules/materialize/materialize.min.js')
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDiOQpE_Q7KDvk5mVXPU_0EWsmEmT4CHM4 &signed_in=true&libraries=places&callback=initialize', async='', defer='')
+    script(src='javascripts/modules/jQuery/jquery-ui.min.js')
+    script(src='javascripts/index/view-pattern.js')
+    script(src='javascripts/index/map.js')
+    

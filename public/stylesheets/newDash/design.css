@@ -1,0 +1,58 @@
+div#formContainer {
+    float: left;
+    width: 32%;
+    margin-left: 0.5%;
+    margin-top: 0.5%;
+    background: #FAFAFA none repeat scroll 0% 0%;
+    border: 1px solid #EBEBEB;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.098);
+}
+a#confirm {
+    float: right;
+    margin-bottom: 2%;
+    margin-right: 2%;
+}
+.btn {
+    background-color: #4285F4;
+}
+ul.collapsible {
+    width: 94%;
+    margin-left: 3%;
+}
+div.card-panel.teal form#fileUpload #importingBase.file-field.input-field{
+    width: 96%;
+    margin-left: 2%;
+}
+
+.image_picker_image{
+    width: 150px !important;
+    height: auto !important;
+}
+
+#box{
+    width: 48% !important;
+    left: 23% !important;
+    top: 26% !important;
+    height: 39% !important;
+    border-radius: 25px !important;
+}
+#bannerConfirm{
+    margin-left: 1%;
+}
+a#sendImage{
+    margin-left: 28%;
+    margin-top: -8%;
+}
+#importingBase{
+    width: 73%;
+    margin-left: 10%;
+}
+.card-panel{
+    width: 95%;
+    margin-left: 2%;
+}
+a#saveinfo{
+    margin-left: 63%;
+    margin-top: -2%;
+    margin-bottom: 2%;
+}
